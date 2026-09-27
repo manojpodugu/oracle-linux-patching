@@ -1,0 +1,31 @@
+# OS
+cat /etc/os-release
+
+# Current kernel
+uname -r
+
+# Repositories
+dnf repolist
+
+# Available updates
+dnf check-update
+
+# Available errata
+dnf updateinfo list
+
+# Security updates
+sudo dnf update --security
+
+# Apply all updates
+sudo dnf upgrade 
+
+NOTE: In oracle linux, dnf update = dnf upgrade {recommended}
+
+# Check whether reboot is needed
+dnf needs-restarting -r
+
+# Reboot
+sudo reboot
+
+# Verify after reboot
+uname -r
